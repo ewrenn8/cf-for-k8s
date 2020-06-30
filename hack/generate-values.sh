@@ -101,6 +101,12 @@ variables:
   type: password
 - name: uaa_encryption_key_passphrase
   type: password
+- name: cc_admin_client_secret
+  type: password
+- name: cc_username_lookup_client_secret
+  type: password
+- name: kpack_watcher_client_secret
+  type: password
 - name: default_ca
   type: certificate
   options:
@@ -216,6 +222,9 @@ cf_db:
   admin_password: $(bosh interpolate ${VARS_FILE} --path=/db_admin_password)
 
 capi:
+  cc_admin_client_secret: $(bosh interpolate ${VARS_FILE} --path=/cc_admin_client_secret)
+  cc_username_lookup_client_secret: $(bosh interpolate ${VARS_FILE} --path=/cc_username_lookup_client_secret)
+  kpack_watcher_client_secret: $(bosh interpolate ${VARS_FILE} --path=/kpack_watcher_client_secret)
   database:
     password: $(bosh interpolate ${VARS_FILE} --path=/capi_db_password)
 
