@@ -129,7 +129,7 @@ metadata:
   namespace: #@ data.values.system_namespace
 type: Opaque
 stringData:
-  password: #@ data.values.uaa.admin_client_secret
+  password: #@ data.values.capi.kpack_watcher_client_secret
 ---
 apiVersion: v1
 kind: Secret
@@ -138,4 +138,4 @@ metadata:
   namespace: #@ data.values.system_namespace
 type: Opaque
 stringData:
-  password: #@ data.values.uaa.admin_client_secret
+  password: #@ data.values.capi.cc_username_lookup_client_secret
